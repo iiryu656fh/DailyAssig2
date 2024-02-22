@@ -16,8 +16,17 @@ public class BukuMain13 {
         bk2.terjual(11);
         bk2.tampilInformasi();
 
-        Buku13 bk3 = new Buku13("Hujan", "TereLiye", 190, 15, 120000);
-        bk3.restock(5);
-        bk3.tampilInformasi();
+        Buku13 bukuNisa = new Buku13("Hujan", "TereLiye", 190, 15, 120000);
+        //hitung harga total terjual 5
+        bukuNisa.terjual(3);
+        bukuNisa.tampilInformasi();
+        int hargaTotal = bukuNisa.hitungHargaTotal(3);
+        System.out.println("Harga total: Rp " + hargaTotal);
+        //hitung diskon
+        int diskon = bukuNisa.hitungDiskon(hargaTotal);
+        System.out.println("Diskon: Rp " + diskon);
+        //hitunt total bayar
+        int bayar = bukuNisa.hitungHargaBayar(hargaTotal, diskon);
+        System.out.println("Total bayar: Rp " + bayar);
     }
 }
