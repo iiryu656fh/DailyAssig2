@@ -39,5 +39,13 @@ public class MahasiswaMain {
             System.out.printf("| %-5s | %-10s | %-10s | %-14s | %-10s |\n", (i+1), mhs[i].nama, mhs[i].nim, mhs[i].gender, mhs[i].ipk);
             System.out.println("+---------------------------------------------------------------+");
         }
+
+        Mahasiswa mhsiswa = new Mahasiswa(null, null, null, 0.0); // new object
+        double rata2 = mhsiswa.ipkRata2(mhs); //call method statis
+        System.out.printf("| %-48s | %-10.2f |\n", " Rata-Rata IPK", rata2);
+        System.out.println("+---------------------------------------------------------------+");
+        System.out.println();
+        mhsiswa.mhsTerbaik(mhs); //call method statis
+
     }
 }

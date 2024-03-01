@@ -23,4 +23,26 @@ public class Mahasiswa {
     public double ipkMHS() {
         return ipk;
     }
+    public Double ipkRata2(Mahasiswa[] mhs) {
+        double sum = 0;
+        for (Mahasiswa MHSiswa : mhs) {
+            sum += MHSiswa.ipk;
+        }
+        return sum / mhs.length;
+    }
+    public void mhsTerbaik(Mahasiswa[] mhs) {
+        Mahasiswa terbaik = mhs[0]; //inisialisasi awal
+        for (int i = 1; i < mhs.length; i++) {
+            if (mhs[i].ipk > terbaik.ipk) {
+                terbaik = mhs[i];
+            }
+        }
+        System.out.println("+---------------------------------+");
+        System.out.println("|  Mahasiswa dengan IPK terbesar  |");
+        System.out.println("+---------------------------------+");
+        System.out.println("Nama            : " + terbaik.nama);
+        System.out.println("NIM             : " + terbaik.nim);
+        System.out.println("Jenis Kelamin   : " + terbaik.gender);
+        System.out.println("IPK             : " + terbaik.ipk);
+    }
 }
