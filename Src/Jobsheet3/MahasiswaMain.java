@@ -22,7 +22,7 @@ public class MahasiswaMain {
             sc.nextLine();
             mhs[i].nama = sc.nextLine();
             System.out.print("NIM             : ");
-            mhs[i].nim = sc.nextLine();
+            mhs[i].nim = sc.nextLine(); 
             System.out.print("Jenis Kelamin   : ");
             mhs[i].gender = sc.nextLine();
             System.out.print("IPK             : ");
@@ -41,11 +41,11 @@ public class MahasiswaMain {
         }
 
         Mahasiswa mhsiswa = new Mahasiswa(null, null, null, 0.0); // new object
-        double rata2 = mhsiswa.ipkRata2(mhs); //call method statis
+        double rata2 = mhsiswa.ipkRata2(mhs); //call method 
         System.out.printf("| %-48s | %-10.2f |\n", " Rata-Rata IPK", rata2);
         System.out.println("+---------------------------------------------------------------+");
         System.out.println();
-        mhsiswa.mhsTerbaik(mhs); //call method statis
+        mhsiswa.mhsTerbaik(mhs); //call method
 
     }
 }
