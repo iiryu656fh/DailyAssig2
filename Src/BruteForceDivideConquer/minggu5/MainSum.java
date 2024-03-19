@@ -7,27 +7,42 @@ public class MainSum {
 
         System.out.println("+------------------------------------------------+");
         System.out.println("|       Program Menghitung Keuntungan Total      |");
-        System.out.println("|            (Satuan Juta. Misal 5.9)            |");
+        System.out.println("|       Perusahaan (Satuan Juta. Misal 5.9)      |");
         System.out.println("+------------------------------------------------+");
-        System.out.print("Masukkan jumlah bulan: ");
+        
+        System.out.print("Masukkan jumlah perusahaan    : ");
+        int prshn = sc.nextInt();
+        System.out.print("Masukkan jumlah bulan         : ");
         int elm = sc.nextInt();
         System.out.println();
 
-        Sum sm = new Sum(elm);
-        System.out.println("Masukkan nilai keuntungan tiap bulan!");
-        //for (int i = 0; i < sm.elemen; i++) {
-        for (int i = 0; i < elm; i++) {
-            System.out.print("Bulan ke-" + (i+1) + " = ");
-            sm.keuntungan[i] = sc.nextDouble();
-        }
-        System.out.println();
+        double[][] kPerusahaan = new double[prshn][elm];
 
-        System.out.println("+------------------------------------------+");
-        System.out.printf("|      Total Keuntungan selama %s ", elm + " bulan     |"); 
-        System.out.print("\n+------------------------+-----------------+");
-        System.out.printf("\n|Algoritma Brute Force   | %-15.2f |", sm.totalBF(sm.keuntungan));
-        System.out.printf("\n|Algoritma Divide Conquer| %-15.2f |", sm.totalDC(sm.keuntungan, 0, sm.elemen-1));
-        System.out.print("\n+------------------------+-----------------+");
+        //Sum sm = new Sum(elm);
+        System.out.println("Masukkan nilai keuntungan tiap bulan!");
+        for (int i = 0; i < prshn; i++) {
+            System.out.println("Perusahaan ke-" + (i + 1));
+            //for (int i = 0; i < sm.elemen; i++) {
+            for (int j = 0; j < elm; j++) {
+                System.out.print("Bulan ke-" + (j + 1) + " = ");
+                kPerusahaan[i][j] = sc.nextDouble();
+            }
+            System.out.println();
+        }
+
+        System.out.println("+-------------------------------------------------+");
+        System.out.println("|      Total Keuntungan Tiap Perusahaan           |");
+        System.out.printf("|           Selama %d Bulan                        |\n", elm);
+        System.out.println("+-------------------------------------------------+");
+
+        for (int i = 0; i < prshn; i++) {
+            Sum Aperusahaan = new Sum(elm);  
+            double Akeuntungan = Aperusahaan.totalBF(kPerusahaan[i]);
+            System.out.printf("Perusahaan ke        : " + (i+1));
+            System.out.println("\nTotal keuntungan    : " + Akeuntungan);
+            System.out.println();
+        }
+
 
     }
 }
