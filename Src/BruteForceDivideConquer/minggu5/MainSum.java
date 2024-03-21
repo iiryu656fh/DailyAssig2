@@ -39,7 +39,7 @@ public class MainSum {
             Sum Aperusahaan = new Sum(elm);  
             double Akeuntungan = Aperusahaan.totalBF(kPerusahaan[i]);
             System.out.printf("Perusahaan ke        : " + (i+1));
-            System.out.println("\nTotal keuntungan    : " + Akeuntungan);
+            System.out.println("\nTotal keuntungan     : " + Akeuntungan);
             System.out.println();
         }
 
