@@ -1,4 +1,4 @@
-package jobsheet6;
+package jobsheet5;
 
 public class DaftarMahasiswaBerprestasi {
     Mahasiswa listMhs[] = new Mahasiswa[5];
@@ -57,8 +57,8 @@ public class DaftarMahasiswaBerprestasi {
             int j = i - 1;
             //while (j > 0 && listMhs[j - 1].ipk > tmp.ipk) {
             //    listMhs[j] = listMhs[j - 1];
-            while (j >= 0 && listMhs[j].ipk > tmp.ipk) {
-                listMhs[j + 1] = listMhs[j - 1];
+            while (j >= 0 && listMhs[j].ipk < tmp.ipk) {
+                listMhs[j + 1] = listMhs[j];
                 j--;
             }
             //listMhs[j] = tmp;
