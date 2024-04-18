@@ -85,4 +85,51 @@ public class Gudang13 {
         }
         return biner;
     }
+
+    public Barang13 lihatBarangTerbawah() {
+        if(!cekKosong()) {
+            Barang13 barangTerbawah = tumpukan[0];
+            System.out.println("Barang terbawah: " + barangTerbawah.nama);
+            return barangTerbawah;
+        } else {
+            System.out.println("Tumpukan barang kosong.");
+            return null;
+        }
+    }
+
+    public Barang13 cariBarangK(int kode) { 
+        if (!cekKosong()) {
+            for (int i = 0; i <= top; i++) {
+                if (tumpukan[i].kode == kode) {
+                    System.out.println("Barang " + kode + " ditemukan, rincian:");
+                    System.out.printf("Kode %d: %s (Kategori %s)\n", tumpukan[i].kode, tumpukan[i].nama,
+                        tumpukan[i].kategori);
+                    return tumpukan[i];
+                }
+            }
+            System.out.println("Barang " + kode + " tidak ditemukan");
+            return null;
+        } else {
+            System.out.println("Tumpukan barang kosong.");
+            return null;
+        }
+    }
+
+    public Barang13 cariBarangN(String nama) {
+        if (!cekKosong()) {
+            for (int i = 0; i <= top; i++) {
+                if (tumpukan[i].nama.equalsIgnoreCase(nama)) {
+                    System.out.println("Barang " + nama + " ditemukan, rincian:");
+                    System.out.printf("Kode %d: %s (Kategori %s)\n", tumpukan[i].kode, tumpukan[i].nama,
+                        tumpukan[i].kategori);
+                    return tumpukan[i];
+                }
+            }
+            System.out.println("Barang " + nama + " tidak ditemukan");
+            return null;
+        } else {
+            System.out.println("Tumpukan barang kosong.");
+            return null;
+        }
+    }
 }
