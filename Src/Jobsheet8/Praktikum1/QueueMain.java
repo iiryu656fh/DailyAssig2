@@ -1,4 +1,4 @@
-package Jobsheet8.Praktikum1;
+package Praktikum1;
 import java.util.Scanner;
 
 public class QueueMain {
@@ -48,6 +48,6 @@ public class QueueMain {
                     Q.clear();
                     break;
             }
-        } while (pilih == 1 || pilih == 2 || pilih == 3 || pilih == 5 || pilih ==5);
+        } while (pilih == 1 || pilih == 2 || pilih == 3 || pilih == 4 || pilih ==5);
     }
 }
