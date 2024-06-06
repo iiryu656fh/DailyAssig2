@@ -1,7 +1,9 @@
 package minggu15;
+import java.util.Scanner;
 
 public class GraphMain13 {
     public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
         Graph13 gedung = new Graph13(6);
 
         gedung.addEdge(0, 1, 50);
@@ -15,5 +17,39 @@ public class GraphMain13 {
         
         gedung.removeEdge(1,3);
         gedung.printGraph();
+
+        //modif percb 1
+        while (true) {
+            System.out.print("Masukkan gedung asal (-1 untuk keluar)        : ");
+            int asal = sc.nextInt();
+            if (asal == -1) {
+                break;
+            }
+            System.out.print("Masukkan gedung tujuan (-1 untuk keluar)     : " );
+            int tujuan = sc.nextInt();
+            if (tujuan == -1) {
+                break;
+            }
+            gedung.tetangga(asal, tujuan);
+            System.out.println();
+        }
+
+         //percb 2
+         GraphMatriks13 gdg = new GraphMatriks13(4);
+         gdg.makeEdge(0, 1, 50);
+         gdg.makeEdge(1, 0, 60);
+         gdg.makeEdge(1, 2, 70);
+         gdg.makeEdge(2, 1, 80);
+         gdg.makeEdge(2, 3, 40);
+         gdg.makeEdge(3, 0, 90);
+         gdg.printGraph();
+         System.out.println("Hasil setelah penghapusan edge");
+         gdg.removeEdge(2, 1);
+         gdg.printGraph();
+         System.out.println();
+
+        for (int i = 0; i < 4; i++) {
+           gdg.degree(i);
+        }
     }
 }
